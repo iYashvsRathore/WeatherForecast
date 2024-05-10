@@ -1,0 +1,18 @@
+.weather__card {
+    box-shadow: 0 0 2rem rgba(0, 0, 255, 0.1);
+    justify-items: center;
+    padding: 2rem;
+    margin: 2rem;
+    cursor: pointer;
+    background-color: white;
+    border-radius: 1.75rem;
+    animation: 1.25s ease-in-out 0ms 1 fadein;
+}
+
+.ag-grid-cell-hot {
+    background-color: rgba(239, 232, 5, 0.795);
+}
+
+.ag-grid-cell-cool {
+    background-color: rgba(11, 147, 189, 0.795);
+}

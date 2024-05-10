@@ -1,0 +1,11 @@
+
+img  {
+    width: 2cap;
+    justify-content: center;
+}
+
+label {
+    display: inline;
+    justify-content: center;
+    margin-left: 1em;
+}

@@ -1,0 +1,36 @@
+<sky-navbar>
+  <sky-navbar-item>
+    <a routerLink="/weatherforecast" routerLinkActive="sky-navbar-item-active">
+      <img src="../assets/WeatherApp.png" alt="logo" class="">
+      <label>Weather Forecast</label>
+    </a>
+  </sky-navbar-item>
+  <sky-navbar-item>
+    <a routerLinkActive="sky-navbar-item-active">
+      <form form [formGroup]="formGroup" class="current-weather-toggle">
+        <sky-toggle-switch ariaLabel="Switch SKY UX Theme" formControlName="theme">
+          <sky-toggle-switch-label> SKY UX Modern Theme </sky-toggle-switch-label>
+        </sky-toggle-switch>
+      </form>
+    </a>
+  </sky-navbar-item>
+  <sky-navbar-item>
+    <a routerLinkActive="sky-navbar-item-active">
+      <form form [formGroup]="formGroup" class="current-weather-toggle">
+        <sky-toggle-switch ariaLabel="Switch Dark Mode" formControlName="darkMode">
+          <sky-toggle-switch-label> Dark Mode</sky-toggle-switch-label>
+        </sky-toggle-switch>
+      </form>
+    </a>
+  </sky-navbar-item>
+  <sky-navbar-item>
+    <!-- <sky-dropdown (click)="onMenuClick()">
+      <sky-dropdown-button> {{dropdownMenuText}} </sky-dropdown-button>
+      <sky-dropdown-menu>
+        <sky-dropdown-item>
+          <a routerLink="/weatherforecast" (click)="onDropdownItemClick('weatherforecast')"> Weather Forecast </a>
+        </sky-dropdown-item>
+      </sky-dropdown-menu>
+    </sky-dropdown> -->
+  </sky-navbar-item>
+</sky-navbar>

@@ -1,0 +1,24 @@
+<div>
+    <sky-box class="sky-padding-even-sm">
+        <sky-box-header>
+            <h2>Weather Forecast Details</h2>
+        </sky-box-header>
+        <sky-box-content>
+            <sky-wait data-sky-id="wait-demo" [isWaiting]="isWaiting"> </sky-wait>
+            <app-weather-forecast-search (onWeatherSearch)="onWeatherSearch($event)"
+                (onWeatherReset)="onWeatherReset($event)"></app-weather-forecast-search>
+        </sky-box-content>
+    </sky-box>
+</div>
+
+<div class="--sky-background-color-info-light" skyBackToTop>
+    <sky-box *ngIf="this.loadComponent" class="sky-padding-even-sm" #weatherDataSection>
+        <sky-box-content>
+            <app-weather-forecast-current-day [forecast]="forecasts" [locationName] = "cityName" (onToggle)="onHourlyToggle($event)"/>
+
+            <app-weather-forecast-daily *ngIf="!this.loadHourlyComponent" [dailyWeatherData]="this.forecasts.data.daily"/>
+
+            <app-weather-forecast-hourly *ngIf="this.loadHourlyComponent" [hourlyWeatherData]="this.forecasts.data.hourly"/>
+        </sky-box-content>
+    </sky-box>
+</div>

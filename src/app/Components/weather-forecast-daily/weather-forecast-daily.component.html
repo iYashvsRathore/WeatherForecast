@@ -1,0 +1,17 @@
+<sky-box class="sky-margin-stacked-sm weather__card">
+    <sky-box-header>
+        <h2 class="sky-font-heading-2">Daily Weather</h2>
+    </sky-box-header>
+    <sky-box-content>
+        <sky-ag-grid-wrapper>
+            <ag-grid-angular 
+            [className]="this.themeClass"
+            [pagination]="pagination"
+            [paginationPageSize]="paginationPageSize"
+            [paginationPageSizeSelector]="paginationPageSizeSelector" 
+            [gridOptions]="gridOptions" 
+            [rowData]="gridData" 
+            [overlayNoRowsTemplate]="noRowsTemplate" />
+        </sky-ag-grid-wrapper>
+    </sky-box-content>
+</sky-box>

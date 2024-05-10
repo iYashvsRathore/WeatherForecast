@@ -1,0 +1,260 @@
+.weather__card {
+  box-shadow: 0 0 2rem rgba(0, 0, 255, 0.1);
+  justify-items: center;
+  padding: 2rem;
+  margin: 2rem;
+  cursor: pointer;
+  background-color: white;
+  border-radius: 1.75rem;
+  animation: 1.25s ease-in-out 0ms 1 fadein;
+}
+
+.current-weather {
+  width: auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: unset;
+}
+
+.current-weather-header {
+  flex: 5;
+}
+
+.current-weather-container {
+  height: 80vh;
+  width: 80vw;
+  display: flex;
+  flex-direction: row;
+  overflow: auto;
+  overflow-y: auto;
+  border-color: black;
+}
+
+.left-container {
+  flex: 3;
+  justify-items: center;
+  padding-right: 0.1%;
+  height: 100%;
+  width: 100%;
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+  display: flex;
+  flex-direction: column;
+  border-right-width: 20em;
+  border-right-color: black;
+  background-color: whitesmoke;
+  box-shadow: 10px;
+}
+
+.left-container-temp-data {
+  flex: 2;
+  margin-left: 1em;
+  margin-top: 1em;
+  margin-right: 1em;
+  height: 20%;
+  /* background-color: rgba(0, 0, 0, 0.39); */
+  border-radius: 30px;
+  display: flex;
+  flex-direction: column;
+}
+
+.left-container-temp-image {
+  flex: 2;
+  align-self: center;
+}
+
+.left-container-temp-image img {
+  width: 180px;
+  height: 180px; 
+}
+
+.left-container-temp-value {
+  flex: 1;
+  font-size: 68px;
+  font-weight: 400;
+  margin-left: 10%;
+}
+
+.left-container-temp-value sup {
+  position: relative;
+  margin-top: 8px;
+  font-size: 40px;
+}
+
+.left-container-temp-current-day{
+  flex: 1;
+  margin-left: 10%;
+  font-size: 20px;
+  margin-bottom: -20%;
+}
+
+
+.dividing-line {
+  height: 8px;
+  width: 80%;
+  align-self: center;
+  border-radius: 50px;
+  background-color: black;
+}
+
+.left-container-other-details {
+  flex: 1;
+  /* background-color: rgba(0, 0, 0, 0.39); */
+  border-radius: 30px;
+  margin-left: 1em;
+  margin-right: 1em;
+  margin-bottom: 1em;
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+}
+
+.left-container-temp-summary {
+  flex: 1;
+  display: flex;
+  flex-direction: row ;
+  margin-top: 8px;
+  margin-left: 10%;
+  font-size: 18px;
+}
+
+.left-container-rain-stats {
+  flex: 1; 
+  display: flex;
+  flex-direction: row ;
+  margin-left: 10%;
+  font-size: 18px;
+}
+
+.left-container-location-details {
+  flex: 3;
+  text-align: center;
+}
+
+.left-container-location-img {
+  align-self: center;
+}
+
+.left-container-location-img img {
+  width: 300px;
+  height: 100px;
+  border-radius: 20px;
+}
+
+.left-container-location-name {
+  font-size: large;
+  font-weight: bold;
+  color: black;
+}
+
+.right-container {
+  flex: 7;
+  justify-items: center;
+  padding-left: 0.1%;
+  background-color: rgba(182, 199, 211, 0.326);
+  border-color: black;
+  border-top-right-radius: 30px;
+  border-bottom-right-radius: 30px;
+  display: flex;
+  flex-direction: column;
+}
+
+.right-container-subcontainer-daily {
+  flex: 4;
+  margin: 1rem;
+  height: 100%;
+  align-items: center;
+  border-radius: 30px;
+  display: flex;
+  flex-direction: row;
+}
+
+.right-container-subcontainer-other {
+  flex: 6;
+  margin: 1rem;
+  height: 100%;
+  align-items: center;
+  border-radius: 30px;
+  display: flex;
+  flex-direction: row;
+}
+
+.right-container-daily-temp-card {
+  margin: 1rem;
+  height: 80%;
+  width: 14%;
+  background-color:white;
+  border-radius: 30px;
+  align-items: center;
+}
+
+.right-container-daily-temp-image {
+  flex: 2;
+  align-self: center;
+}
+
+.right-container-daily-temp-image img {
+  width: 60px;
+  height: 60px; 
+  margin-left: 15%;
+}
+
+.right-container-daily-temp-value {
+  flex: 1;
+  font-size: 10px;
+  font-weight: 400;
+  margin-left: 20%;
+  margin-top: 10%;
+}
+
+.right-container-daily-value sup {
+  position: relative;
+  margin-top: 8px;
+  font-size: 40px;
+}
+
+.right-container-daily-temp-current-day{
+  flex: 1;
+  margin-left: 35%;
+  margin-bottom: 2px;
+}
+
+
+.right-container-temp-card {
+  flex: 3;
+  margin: 1rem;
+  height: 80%;
+  background-color: white;
+  border-radius: 30px;
+}
+
+
+.right-container-temp-image {
+  flex: 4;
+  align-self: center;
+}
+
+.right-container-temp-image img {
+  width: 60px;
+  height: 60px; 
+  margin-left: 15%;
+}
+
+.right-container-temp-value {
+  flex: 4;
+  font-size: 10px;
+  font-weight: 400;
+  margin-left: 20%;
+}
+
+.right-container-value sup {
+  position: relative;
+  margin-top: 8px;
+  font-size: 40px;
+}
+
+.right-container-temp-current-day{
+  flex: 4;
+  margin-left: 35%;
+  margin-bottom: 2px;
+}
