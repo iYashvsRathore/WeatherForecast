@@ -51,7 +51,7 @@
                 <div style="margin-left: 5%; margin-top: 5%;">Week's Highlight</div>
                 <div class="right-container-subcontainer-daily">
                     <div class="right-container-daily-temp-card" *ngFor="let index of numbersDailyWeather">
-                        <div class="right-container-daily-temp-current-day">{{dailyDay[index].day}}</div>
+                        <div class="right-container-daily-temp-current-day"><section>{{dailyDay[index].day}}</section></div>
                         <div class="right-container-daily-temp-image">
                             <img *ngIf="forecast.data.daily.temperature_2m_max[index] < 5 && forecast.data.daily.precipitation_probability_max[index]  > 20" src="../../../assets/snowfall.png" alt="Snow Weather">
                             <img *ngIf="forecast.data.daily.temperature_2m_max[index] > 5 && forecast.data.daily.temperature_2m_max[index] < 25 && forecast.data.daily.precipitation_probability_max[index]  < 20" src="../../../assets/weather-app.png" alt="Cloudy Weather">
@@ -63,15 +63,33 @@
                 </div>
                 <div style="margin-left: 5%;">Today's Highlight</div>
                 <div class="right-container-subcontainer-other">
-                    <div class="right-container-temp-card" *ngFor="let index of numbersCurrentWeather">
-                        <div class="right-container-temp-current-day">{{dailyDay[index].day}}</div>
+                    <div class="right-container-temp-card">
+                        <div class="right-container-temp-current-day-wind">{{currentDayWeatherCard[0].weathervatiable}}</div>
+                        <div class="right-container-temp-value-wind">{{forecast.data.current.wind_speed_10m}}</div>
                         <div class="right-container-temp-image">
-                            <img *ngIf="forecast.data.daily.temperature_2m_max[index] < 5 && forecast.data.daily.precipitation_probability_max[index]  > 20" src="../../../assets/snowfall.png" alt="Snow Weather">
-                            <img *ngIf="forecast.data.daily.temperature_2m_max[index] > 5 && forecast.data.daily.temperature_2m_max[index] < 25 && forecast.data.daily.precipitation_probability_max[index]  < 20" src="../../../assets/weather-app.png" alt="Cloudy Weather">
-                            <img *ngIf="forecast.data.daily.temperature_2m_max[index] > 5 && forecast.data.daily.temperature_2m_max[index] <= 25 && forecast.data.daily.precipitation_probability_max[index]  > 20" src="../../../assets/storm.png" alt="Strom Weather">
-                            <img *ngIf="forecast.data.daily.temperature_2m_max[index] > 25" src="../../../assets/sun.png" alt="Sunny Day Weather">
+                            <img src="../../../assets/wind.png" alt="Wind">
                         </div>
-                        <div class="right-container-temp-value">{{forecast.data.daily.temperature_2m_max[index]}}<sup>°</sup> - {{forecast.data.daily.temperature_2m_min[index]}}<sup>°</sup></div>
+                    </div>
+                    <div class="right-container-temp-card">
+                        <div class="right-container-temp-current-day-humidity">{{currentDayWeatherCard[1].weathervatiable}}</div>
+                        <div class="right-container-temp-value-humidity">{{forecast.data.current.relative_humidity_2m}}%</div>
+                        <div class="right-container-temp-image">
+                            <img src="../../../assets/humidity.png" alt="Humidity Weather">
+                        </div>
+                    </div>
+                    <div class="right-container-temp-card">
+                        <div class="right-container-temp-current-day-pressure">{{currentDayWeatherCard[2].weathervatiable}}</div>
+                        <div class="right-container-temp-value-pressure">{{forecast.data.current.surface_pressure}}</div>
+                        <div class="right-container-temp-image">
+                            <img src="../../../assets/pressure-gauge.png" alt="Surface Pressure">
+                        </div>
+                    </div>
+                    <div class="right-container-temp-card">
+                        <div class="right-container-temp-current-day-rain">{{currentDayWeatherCard[3].weathervatiable}}</div>
+                        <div class="right-container-temp-value-rain">{{forecast.data.current.rain}}</div>
+                        <div class="right-container-temp-image">
+                            <img src="../../../assets/rain_percentage.png" alt="rain_percentage">
+                        </div>
                     </div>
                 </div>
             </div>

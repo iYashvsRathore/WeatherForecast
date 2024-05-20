@@ -71,6 +71,8 @@ export class Current {
     this.precipitation = 0;
     this.rain = 0;
     this.is_day = '';
+    this.wind_speed_10m = 0;
+    this.surface_pressure = 0;
   }
   time: string
   interval: number
@@ -80,6 +82,8 @@ export class Current {
   precipitation: number
   rain: number
   is_day: string
+  wind_speed_10m: number
+  surface_pressure: number
 }
 
 export class HourlyUnits {
@@ -170,4 +174,10 @@ export interface HourlyWeather {
   precipitation: number,
   precipitation_probability: number,
   relative_humidity_2m: number
+}
+
+export interface WeatherCard {
+  weathervatiable: string
+  img: string,
+  property: string
 }

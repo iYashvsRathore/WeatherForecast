@@ -5,7 +5,7 @@ import { SkyToggleSwitchModule } from '@skyux/forms';
 import { SkyHelpInlineModule } from '@skyux/indicators';
 import { SkyBoxModule } from '@skyux/layout';
 import { Subject, takeUntil } from 'rxjs';
-import { WeatherForecast } from '../../Models/weatherforecast.model';
+import { WeatherCard, WeatherForecast } from '../../Models/weatherforecast.model';
 
 @Component({
   selector: 'app-weather-forecast-current-day',
@@ -24,11 +24,33 @@ export class WeatherForecastCurrentDayComponent implements OnChanges, AfterConte
 ;
 
   protected numbersDailyWeather : number[] = [0,1,2,3,4,5,6];
-  protected numbersCurrentWeather : number[] = [1,2,3,4];
+  protected numbersCurrentWeather : number[] = [0,1,2,3];
   protected currentDay: string = '';
   protected currentTime: string = '';
   protected isDay: boolean = false;
   protected dailyDay: any[] = [];
+  protected currentDayWeatherCard: WeatherCard[] = [
+    {
+      weathervatiable:'Wind',
+      img: '',
+      property: 'wind_speed_10m'
+    },
+    {
+      weathervatiable:'Humidty',
+      img: '',
+      property: 'relative_humidity_2m'
+    },
+    {
+      weathervatiable:'Pressure',
+      img: '',
+      property: 'surface_pressure'
+    },
+    {
+      weathervatiable:'Rain',
+      img: '',
+      property: 'rain'
+    }
+  ];
   selectedImage: string;
   images: string[] = [
     '../../../assets/city1.jpg',

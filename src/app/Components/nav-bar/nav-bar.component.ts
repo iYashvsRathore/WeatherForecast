@@ -5,7 +5,7 @@ import { SkyToggleSwitchModule } from '@skyux/forms';
 import { SkyNavbarModule } from '@skyux/navbar';
 import { SkyDropdownModule } from '@skyux/popovers';
 import { SkyTheme, SkyThemeMode } from '@skyux/theme';
-import { Subject, takeUntil } from 'rxjs';
+import { Subject, flatMap, takeUntil } from 'rxjs';
 
 @Component({
   selector: 'app-nav-bar',
@@ -21,8 +21,10 @@ export class NavBarComponent implements OnDestroy {
   @Output() onThemeChange = new EventEmitter<SkyTheme>;
   @Output() onThemeModeChange = new EventEmitter<SkyThemeMode>;
 
-  dropdownMenuText: string = 'Show Menu';
-  dropDownState: boolean = false;
+  // dropdownMenuText: string = 'Show Menu';
+  // dropDownState: boolean = false;
+
+  protected showDarkModeToggle: boolean = true;
 
   protected formGroup: FormGroup<{
     theme: FormControl<boolean | null>,
@@ -32,7 +34,7 @@ export class NavBarComponent implements OnDestroy {
 
   constructor() {
     this.formGroup = inject(FormBuilder).group({
-      theme: new FormControl(true),
+      theme: new FormControl(this.showDarkModeToggle),
       darkMode: new FormControl(false),
     });
 
@@ -41,7 +43,9 @@ export class NavBarComponent implements OnDestroy {
       .subscribe((value) => {
         if (value) {
           this.SkyTheme = SkyTheme.presets.modern;
+          this.showDarkModeToggle = true;
         } else {
+          this.showDarkModeToggle = false;
           this.SkyTheme = SkyTheme.presets.default;
         }
         this.onThemeChange.emit(this.SkyTheme);
@@ -67,12 +71,12 @@ export class NavBarComponent implements OnDestroy {
     alert(buttonText + ' button clicked from Dropdown Menu!');
   }
 
-  protected onMenuClick(): void {
-    if (this.dropDownState) {
-      this.dropdownMenuText = 'Hide Menu';
-    }
-    else {
-      this.dropdownMenuText = 'Show Menu';
-    }
-  }
+  // protected onMenuClick(): void {
+  //   if (this.dropDownState) {
+  //     this.dropdownMenuText = 'Hide Menu';
+  //   }
+  //   else {
+  //     this.dropdownMenuText = 'Show Menu';
+  //   }
+  // }
 }
